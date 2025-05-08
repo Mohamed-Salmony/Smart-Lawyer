@@ -1,0 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+
+    --card: 222 47% 14%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 222 47% 14%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 51 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 222 47% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 44 75% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 51 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 44 75% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 222 47% 14%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 222 47% 14%;
+    --sidebar-ring: 44 75% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-darknavy text-foreground font-tajawal;
+    direction: rtl;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cairo font-bold;
+  }
+  
+  /* Custom progress bar styling */
+  .progress-bar {
+    @apply h-2 bg-darkgray rounded-full overflow-hidden;
+  }
+  
+  .progress-bar .progress {
+    @apply h-full bg-gold;
+  }
+  
+  /* Custom file upload button */
+  .file-upload {
+    @apply border-2 border-dashed border-lightgray rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer transition-all hover:border-gold;
+  }
+  
+  /* Custom styles for cards */
+  .stat-card {
+    @apply bg-navy rounded-lg p-6 shadow-md;
+  }
+  
+  /* Result cards */
+  .result-section {
+    @apply bg-navy rounded-lg p-4 mb-4;
+  }
+  
+  .result-section-title {
+    @apply text-gold text-xl font-bold text-right mb-3;
+  }
+  
+  /* Custom buttons */
+  .btn-primary {
+    @apply bg-gold text-black font-bold py-2 px-6 rounded hover:bg-amber-400 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-darkgray text-white font-bold py-2 px-6 rounded hover:bg-gray-600 transition-colors;
+  }
+  
+  /* Language selector buttons */
+  .lang-btn {
+    @apply bg-gold text-black font-bold py-1 px-4 rounded;
+  }
+  
+  .lang-btn-inactive {
+    @apply bg-darkgray text-white font-bold py-1 px-4 rounded hover:bg-gray-600 transition-colors;
+  }
+  
+  /* Custom table styles */
+  .data-table {
+    @apply w-full text-right;
+  }
+  
+  .data-table th {
+    @apply py-3 px-4 bg-darkgray text-white font-cairo;
+  }
+  
+  .data-table td {
+    @apply py-3 px-4 border-b border-darkgray;
+  }
+  
+  /* Custom form inputs */
+  .form-input {
+    @apply bg-darkgray text-white rounded p-2 w-full text-right;
+  }
+}
