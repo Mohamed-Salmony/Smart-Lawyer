@@ -65,7 +65,7 @@ const MyFiles: React.FC<MyFilesProps> = ({ language }) => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="bg-darkgray bg-opacity-40 rounded-lg p-6">
-        <h1 className={`text-2xl font-bold text-gold mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+        <h1 className={`text-2xl font-bold gradient-gold-text mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
           {language === 'ar' 
             ? 'عرض جميع الملفات والتحليلات السابقة' 
             : 'View all previous files and analyses'}
@@ -76,13 +76,13 @@ const MyFiles: React.FC<MyFilesProps> = ({ language }) => {
             <div key={file.id} className="bg-darkgray bg-opacity-70 rounded-lg p-4">
               <div className="flex justify-between items-center">
                 <div className={`flex items-center ${language === 'ar' ? 'space-x-2 space-x-reverse' : 'space-x-2'}`}>
-                  <Button variant="outline" className="bg-transparent text-gold border-gold hover:bg-gold hover:text-black">
+                  <Button variant="outline" className="bg-transparent gradient-gold-text border-[color:#F59E0B] hover:gradient-gold hover:text-black">
                     {language === 'ar' ? 'عرض النتائج' : 'View Results'}
                   </Button>
                   
                   {(file.id === 1 || file.id === 3 || file.id === 5) && (
-                    <Button variant="outline" className="bg-transparent border-gold">
-                      <Download size={18} className={`text-gold ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
+                    <Button variant="outline" className="bg-transparent border-[color:#F59E0B]">
+                      <Download size={18} className={`gradient-gold-text ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
                       {language === 'ar' ? 'تحميل الملف' : 'Download File'}
                     </Button>
                   )}

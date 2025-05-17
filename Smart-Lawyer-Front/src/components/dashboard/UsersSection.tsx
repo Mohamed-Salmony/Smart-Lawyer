@@ -53,9 +53,9 @@ const UsersSection: React.FC = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       case 'inactive':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       default:
         return 'bg-darkgray text-gray-300';
     }
@@ -64,11 +64,11 @@ const UsersSection: React.FC = () => {
   const getRoleColor = (role: string) => {
     switch (role) {
       case 'admin':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       case 'lawyer':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       case 'assistant':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       default:
         return 'bg-darkgray text-gray-300';
     }
@@ -77,8 +77,8 @@ const UsersSection: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <h1 className="text-2xl font-bold text-gold">{t('users.title')}</h1>
-        <button className="inline-flex items-center px-4 py-2 bg-gold text-black rounded-lg hover:bg-amber-400 transition-colors">
+        <h1 className="text-2xl font-bold gradient-gold-text">{t('users.title')}</h1>
+        <button className="inline-flex items-center px-4 py-2 gradient-gold text-black rounded-lg hover:gradient-gold-text transition-colors">
           <UserPlus className="w-5 h-5 mr-2" />
           {t('users.add')}
         </button>
@@ -162,7 +162,7 @@ const UsersSection: React.FC = () => {
                   <tr key={user.id} className="border-b border-darkgray hover:bg-darkgray">
                     <td className="py-3 px-4">
                       <div className="flex items-center">
-                        <Users className="w-5 h-5 text-gold mr-2" />
+                        <Users className="w-5 h-5 gradient-gold-text mr-2" />
                         <span className="text-sm text-gray-300">{user.name}</span>
                       </div>
                     </td>
@@ -189,7 +189,7 @@ const UsersSection: React.FC = () => {
                         {user.status === 'inactive' ? (
                           <button
                             onClick={() => handleActivate(user.id)}
-                            className="p-1 text-gold hover:text-amber-400"
+                            className="p-1 gradient-gold-text hover:gradient-gold-text"
                             title={t('users.actions.activate')}
                           >
                             <CheckCircle className="w-5 h-5" />
@@ -197,7 +197,7 @@ const UsersSection: React.FC = () => {
                         ) : (
                           <button
                             onClick={() => handleDeactivate(user.id)}
-                            className="p-1 text-gold hover:text-amber-400"
+                            className="p-1 gradient-gold-text hover:gradient-gold-text"
                             title={t('users.actions.deactivate')}
                           >
                             <XCircle className="w-5 h-5" />
@@ -205,10 +205,10 @@ const UsersSection: React.FC = () => {
                         )}
                         <button
                           onClick={() => handleDelete(user.id)}
-                          className="p-1 text-gray-400 hover:text-gold"
+                          className="p-1 force-gradient-gold-text hover:force-gradient-gold-text"
                           title={t('users.actions.delete')}
                         >
-                          <Trash2 className="w-5 h-5" />
+                          <Trash2 className="w-5 h-5 force-gradient-gold-text" />
                         </button>
                       </div>
                     </td>

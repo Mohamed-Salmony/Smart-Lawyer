@@ -9,9 +9,9 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-darknavy text-white">
+    <div className="fixed inset-0 flex flex-col overflow-hidden text-white">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow overflow-auto hide-scrollbar">
         {children}
       </main>
       <Footer />

@@ -1,9 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .gradient-root-bg {
+        /* let the flex‐item sizing do its job—no explicit height here */
+        background: linear-gradient(135deg, #161B29 0%, #1A1F2C 33%, #1F2937 66%, #000000 100%) !important;
+      }
+}
+
 
 @layer base {
   :root {
@@ -54,8 +61,9 @@
   }
 
   body {
-    @apply bg-darknavy text-foreground font-tajawal;
+    @apply text-foreground font-tajawal;
     direction: rtl;
+    background: linear-gradient(90deg, #111827 0%, #1F2937 50%, #000000 100%);
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -73,7 +81,7 @@
   
   /* Custom file upload button */
   .file-upload {
-    @apply border-2 border-dashed border-lightgray rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer transition-all hover:border-gold;
+    @apply border-2 border-dashed border-lightgray rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer transition-all hover:border-yellow-700;
   }
   
   /* Custom styles for cards */
@@ -92,7 +100,12 @@
   
   /* Custom buttons */
   .btn-primary {
-    @apply bg-gold text-black font-bold py-2 px-6 rounded hover:bg-amber-400 transition-colors;
+    @apply text-black font-bold py-2 px-6 rounded transition-colors;
+    background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #D97706 0%, #F59E0B 100%);
   }
   
   .btn-secondary {
@@ -101,11 +114,16 @@
   
   /* Language selector buttons */
   .lang-btn {
-    @apply bg-gold text-black font-bold py-1 px-4 rounded;
+    @apply text-black font-bold py-1 px-4 rounded;
+    background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
   }
   
   .lang-btn-inactive {
     @apply bg-darkgray text-white font-bold py-1 px-4 rounded hover:bg-gray-600 transition-colors;
+  }
+  
+  .lang-btn-inactive:hover {
+    background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
   }
   
   /* Custom table styles */
@@ -125,4 +143,51 @@
   .form-input {
     @apply bg-darkgray text-white rounded p-2 w-full text-right;
   }
+  
+  /* Gold gradient utility */
+  .gradient-gold {
+    background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
+    color: #fff;
+  }
+  .gradient-gold-text {
+    background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  /* Update button and progress bar styles to use gradient */
+  .progress-bar .progress {
+    background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
+  }
+
+  .force-gradient-gold-text {
+    background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  /* Hide default calendar icon */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+
+  /* Navbar glass effect */
+  .navbar-glass {
+    background: rgba(0,0,0,0.5) !important;
+    backdrop-filter: blur(2px);
+  }
+
+
+  
+
+
+  
 }

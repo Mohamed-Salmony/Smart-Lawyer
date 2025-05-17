@@ -52,27 +52,27 @@ const NotificationsList: React.FC<NotificationsListProps> = ({ language }) => {
   const getNotificationIcon = (type: string) => {
     switch (type) {
       case 'file':
-        return <div className="bg-amber-100 p-2 rounded-full"><File size={20} className="text-amber-500" /></div>;
+        return <div className="gradient-gold p-2 rounded-full"><File size={20} className="gradient-gold-text" /></div>;
       case 'analysis':
         return <div className="bg-blue-100 p-2 rounded-full"><BarChart2 size={20} className="text-blue-500" /></div>;
       case 'status':
         return <div className="bg-green-100 p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>;
       default:
-        return <Bell size={20} className="text-amber-500" />;
+        return <Bell size={20} className="gradient-gold-text" />;
     }
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className={`flex justify-between items-center mb-6 ${language === 'en' ? 'flex-row-reverse' : ''}`}>
-        <button className="text-gold hover:text-amber-400 font-bold">
+        <button className="gradient-gold-text hover:gradient-gold-text font-bold">
           {language === 'ar' ? 'تحديد الكل كمقروء' : 'Mark all as read'}
         </button>
         <div className={`flex items-center ${language === 'en' ? 'flex-row-reverse' : ''}`}>
           <h1 className="text-2xl font-bold">
             {language === 'ar' ? 'جميع الإشعارات' : 'All Notifications'}
           </h1>
-          <div className={`w-10 h-10 bg-gold rounded-full flex items-center justify-center ${language === 'ar' ? 'ml-4' : 'mr-4'}`}>
+          <div className={`w-10 h-10 gradient-gold rounded-full flex items-center justify-center ${language === 'ar' ? 'ml-4' : 'mr-4'}`}>
             <Bell className="text-black" size={20} />
           </div>
         </div>
@@ -80,7 +80,7 @@ const NotificationsList: React.FC<NotificationsListProps> = ({ language }) => {
       
       <div className="space-y-4">
         <div className={`flex gap-2 ${language === 'en' ? 'flex-row-reverse' : ''}`}>
-          <Button variant="default" className="bg-gold text-black hover:bg-amber-400">
+          <Button variant="default" className="gradient-gold text-black">
             {language === 'ar' ? 'جميع الإشعارات' : 'All Notifications'}
           </Button>
           <Button variant="outline" className="bg-darkgray">

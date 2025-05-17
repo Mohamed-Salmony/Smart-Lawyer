@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Upload, File } from 'lucide-react';
 
@@ -63,11 +62,11 @@ const FileUploader = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-2 text-gold">رفع ملف قانوني جديد</h1>
+      <h1 className="text-3xl font-bold text-center mb-2 gradient-gold-text">رفع ملف قانوني جديد</h1>
       
       <div className="max-w-2xl mx-auto bg-navy p-8 rounded-lg shadow-lg mt-8">
         <div className="file-upload mb-8">
-          <Upload className="text-gold h-10 w-10 mb-4" />
+          <Upload className="gradient-gold-text h-10 w-10 mb-4" />
           <p className="text-center">اسحب الملفات هنا أو اضغط للتحميل</p>
           <p className="text-xs text-gray-400 mt-2 text-center">(الحد الأقصى: 10 ميجابايت) PDF, DOCX</p>
           
@@ -91,7 +90,7 @@ const FileUploader = () => {
           <div className="mb-8">
             <div className="mb-4 p-3 bg-darkgray rounded-lg flex items-center justify-between">
               <div className="flex items-center">
-                <div className="bg-gold p-2 rounded ml-2">
+                <div className="gradient-gold p-2 rounded ml-2">
                   <File className="text-black" size={20} />
                 </div>
                 <div className="text-right">
@@ -130,7 +129,7 @@ const FileUploader = () => {
                   id={type.id}
                   checked={documentType === type.id}
                   onChange={() => setDocumentType(documentType === type.id ? '' : type.id)}
-                  className="w-4 h-4 text-gold focus:ring-gold"
+                  className="w-4 h-4 gradient-gold-text focus:ring-gold"
                 />
                 <label htmlFor={type.id} className="text-white">{type.label}</label>
               </div>

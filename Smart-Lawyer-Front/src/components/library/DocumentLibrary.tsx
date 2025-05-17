@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Search, Filter, Calendar, Eye } from 'lucide-react';
 import DocumentRow from './DocumentRow';
 
@@ -20,8 +20,20 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
-  
-  // Sample document data
+  const dateInputRef = useRef<HTMLInputElement>(null);
+
+  const handleCalendarClick = () => {
+    if (dateInputRef.current) {
+      dateInputRef.current.showPicker?.();
+      dateInputRef.current.focus();
+    }
+  };
+
+  const formatDate = (isoDate: string): string => {
+    const [year, month, day] = isoDate.split('-');
+    return `${day}/${month}/${year}`;
+  };
+
   const documents: Document[] = [
     { 
       id: 1, 
@@ -30,7 +42,7 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
       type: 'قوانين', 
       typeEn: 'Laws',
       date: '15/01/2025',
-      dateEn: '01/15/2025'
+      dateEn: '15/01/2025'
     },
     { 
       id: 2, 
@@ -39,7 +51,7 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
       type: 'كتب عقود', 
       typeEn: 'Contract Templates',
       date: '20/01/2025',
-      dateEn: '01/20/2025'
+      dateEn: '20/01/2025'
     },
     { 
       id: 3, 
@@ -48,10 +60,10 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
       type: 'مذكرات', 
       typeEn: 'Memos',
       date: '25/01/2025',
-      dateEn: '01/25/2025'
+      dateEn: '25/01/2025'
     },
   ];
-  
+
   const filteredDocuments = documents.filter(doc => {
     const searchField = language === 'ar' ? doc.name : doc.nameEn;
     const typeField = language === 'ar' ? doc.type : doc.typeEn;
@@ -60,7 +72,7 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
     return (
       (searchTerm === '' || searchField.toLowerCase().includes(searchTerm.toLowerCase())) &&
       (selectedType === '' || typeField === selectedType) &&
-      (selectedDate === '' || dateField === selectedDate)
+      (selectedDate === '' || dateField === formatDate(selectedDate))
     );
   });
 
@@ -75,6 +87,7 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
     <div className="container mx-auto px-4 py-8">
       <div className="bg-navy rounded-lg p-6 shadow-lg">
         <div className="flex flex-col md:flex-row gap-4 mb-6">
+          {/* Search Input */}
           <div className="flex-grow relative">
             <Search className={`absolute ${language === 'ar' ? 'right-3' : 'left-3'} top-1/2 transform -translate-y-1/2 text-gray-400`} size={18} />
             <input
@@ -85,7 +98,8 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          
+
+          {/* File Type Select */}
           <div className="relative">
             <select
               className={`form-input appearance-none ${language === 'ar' ? 'pr-10' : 'pl-10'}`}
@@ -101,10 +115,16 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
             </select>
             <Filter className={`absolute ${language === 'ar' ? 'left-3' : 'right-3'} top-1/2 transform -translate-y-1/2 text-gray-400`} size={18} />
           </div>
-          
+
+          {/* Date Picker */}
           <div className="relative">
-            <Calendar className={`absolute ${language === 'ar' ? 'right-3' : 'left-3'} top-1/2 transform -translate-y-1/2 text-gray-400`} size={18} />
+            <Calendar
+              onClick={handleCalendarClick}
+              className={`absolute cursor-pointer ${language === 'ar' ? 'right-3' : 'left-3'} top-1/2 transform -translate-y-1/2 text-gray-400`}
+              size={18}
+            />
             <input
+              ref={dateInputRef}
               type="date"
               className={`form-input ${language === 'ar' ? 'pr-10' : 'pl-10'}`}
               value={selectedDate}
@@ -112,7 +132,8 @@ const DocumentLibrary: React.FC<DocumentLibraryProps> = ({ language }) => {
             />
           </div>
         </div>
-        
+
+        {/* Documents Table */}
         <div className="overflow-x-auto">
           <table className="data-table">
             <thead>

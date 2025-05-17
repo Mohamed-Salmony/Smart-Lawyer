@@ -60,7 +60,7 @@ const AdminDashboard: React.FC = () => {
             icon={<Users size={24} />} 
             title={language === 'ar' ? 'المستخدمين' : 'Users'} 
             value={stats.users} 
-            bgColor="bg-amber-500" 
+            bgColor="gradient-gold" 
           />
           <StatsCard 
             icon={<FileText size={24} />} 
@@ -72,7 +72,7 @@ const AdminDashboard: React.FC = () => {
             icon={<BarChart2 size={24} />} 
             title={language === 'ar' ? 'التحليلات' : 'Analyses'} 
             value={stats.analyses} 
-            bgColor="bg-amber-500" 
+            bgColor="gradient-gold" 
           />
         </div>
         
@@ -106,8 +106,8 @@ const AdminDashboard: React.FC = () => {
                     <td>{language === 'ar' ? file.date.ar : file.date.en}</td>
                     <td>{language === 'ar' ? file.status.ar : file.status.en}</td>
                     <td className="space-x-2 space-x-reverse">
-                      <button className="p-1 text-gold hover:text-amber-400">
-                        <Edit size={18} />
+                      <button className="p-1 force-gradient-gold-text hover:force-gradient-gold-text">
+                        <Edit size={18} className="force-gradient-gold-text" />
                       </button>
                       <button className="p-1 text-red-400 hover:text-red-300">
                         <Trash size={18} />
@@ -142,8 +142,8 @@ const AdminDashboard: React.FC = () => {
                     <td>{user.email}</td>
                     <td>{language === 'ar' ? user.role.ar : user.role.en}</td>
                     <td className="space-x-2 space-x-reverse">
-                      <button className="p-1 text-gold hover:text-amber-400">
-                        <Edit size={18} />
+                      <button className="p-1 force-gradient-gold-text hover:force-gradient-gold-text">
+                        <Edit size={18} className="force-gradient-gold-text" />
                       </button>
                       <button className="p-1 text-red-400 hover:text-red-300">
                         <Trash size={18} />

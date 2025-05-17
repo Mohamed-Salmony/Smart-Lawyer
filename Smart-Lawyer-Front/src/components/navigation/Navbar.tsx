@@ -30,19 +30,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-navy shadow-md">
+    <nav className="navbar-glass shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Avatar className="h-8 w-8 relative cursor-pointer flex items-center justify-center" onClick={() => window.location.href = '/profile'}>
-                <User className="h-5 w-5 text-gold" />
+            <Avatar className="h-8 w-8 rounded-full hover:bg-darkgray relative cursor-pointer flex items-center justify-center" onClick={() => window.location.href = '/profile'}>
+                <User className="h-5 w-5 text-yellow-600" />
             </Avatar>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 space-x-reverse">
             {navLinks.map((link) => (
-              <Link key={link.to} to={link.to} className="text-white hover:text-gold">
+              <Link key={link.to} to={link.to} className="text-white hover:gradient-gold-text">
                 {link.label}
               </Link>
             ))}
@@ -51,11 +51,11 @@ const Navbar = () => {
           <div className="flex items-center space-x-4 space-x-reverse">
             <button 
               onClick={toggleLanguage}
-              className="p-2 rounded-full text-gold hover:bg-darkgray"
+              className="p-2 rounded-full text-yellow-700 hover:bg-darkgray"
             >
               {language === 'ar' ? 'EN' : 'عربي'}
             </button>
-            <Link to="/notifications" className="p-2 rounded-full text-gold hover:bg-darkgray">
+            <Link to="/notifications" className="p-2 rounded-full text-yellow-700 hover:bg-darkgray">
               <Bell size={20} />
             </Link>
             <div className="mr-3">
@@ -64,7 +64,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-full text-gold hover:bg-darkgray"
+              className="md:hidden p-2 rounded-full text-yellow-700 hover:bg-darkgray"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gold hover:bg-darkgray"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:gradient-gold-text hover:bg-darkgray"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

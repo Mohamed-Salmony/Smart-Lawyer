@@ -52,9 +52,9 @@ const DocumentUploader: React.FC<DocumentUploaderProps> = ({ onFileSelected, lan
       return false;
     }
     
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    const maxSize = 20 * 1024 * 1024; // 20MB
     if (file.size > maxSize) {
-      alert(language === 'ar' ? 'حجم الملف يتجاوز الحد المسموح به (10 ميجابايت)' : 'File size exceeds the allowed limit (10MB)');
+      alert(language === 'ar' ? 'حجم الملف يتجاوز الحد المسموح به (20 ميجابايت)' : 'File size exceeds the allowed limit (10MB)');
       return false;
     }
     
@@ -64,13 +64,13 @@ const DocumentUploader: React.FC<DocumentUploaderProps> = ({ onFileSelected, lan
   return (
     <div className="w-full">
       <div 
-        className={`file-upload ${dragActive ? 'border-gold' : ''}`}
+        className={`file-upload ${dragActive ? 'border-yellow-700' : ''}`}
         onDragEnter={handleDrag}
         onDragOver={handleDrag}
         onDragLeave={handleDrag}
         onDrop={handleDrop}
       >
-        <Upload className="text-gold h-10 w-10 mb-4" />
+        <Upload className="text-yellow-700 h-10 w-10 mb-4" />
         <p className="text-center">
           {language === 'ar' ? 'اسحب الملفات هنا أو اضغط للتحميل' : 'Drag files here or click to upload'}
         </p>

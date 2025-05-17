@@ -56,11 +56,11 @@ const FilesSection: React.FC = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'approved':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       case 'pending':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       case 'rejected':
-        return 'bg-darkgray text-gold';
+        return 'bg-darkgray force-gradient-gold-text';
       default:
         return 'bg-darkgray text-gray-300';
     }
@@ -82,8 +82,8 @@ const FilesSection: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <h1 className="text-2xl font-bold text-gold">{t('files.title')}</h1>
-        <button className="inline-flex items-center px-4 py-2 bg-gold text-black rounded-lg hover:bg-amber-400 transition-colors">
+        <h1 className="text-2xl font-bold gradient-gold-text">{t('files.title')}</h1>
+        <button className="inline-flex items-center px-4 py-2 gradient-gold text-black rounded-lg hover:gradient-gold transition-colors">
           <Upload className="w-5 h-5 mr-2" />
           {t('files.upload')}
         </button>
@@ -178,7 +178,7 @@ const FilesSection: React.FC = () => {
                   <tr key={file.id} className="border-b border-darkgray hover:bg-darkgray">
                     <td className="py-3 px-4">
                       <div className="flex items-center">
-                        <FileText className="w-5 h-5 text-gold mr-2" />
+                        <FileText className="w-5 h-5 gradient-gold-text mr-2" />
                         <span className="text-sm text-gray-300">{file.name}</span>
                       </div>
                     </td>
@@ -198,14 +198,14 @@ const FilesSection: React.FC = () => {
                           <>
                             <button
                               onClick={() => handleApprove(file.id)}
-                              className="p-1 text-gold hover:text-amber-400"
+                              className="p-1 gradient-gold-text hover:gradient-gold-text"
                               title={t('files.actions.approve')}
                             >
                               <CheckCircle className="w-5 h-5" />
                             </button>
                             <button
                               onClick={() => handleReject(file.id)}
-                              className="p-1 text-gold hover:text-amber-400"
+                              className="p-1 gradient-gold-text hover:gradient-gold-text"
                               title={t('files.actions.reject')}
                             >
                               <XCircle className="w-5 h-5" />
@@ -214,10 +214,10 @@ const FilesSection: React.FC = () => {
                         )}
                         <button
                           onClick={() => handleDelete(file.id)}
-                          className="p-1 text-gray-400 hover:text-gold"
+                          className="p-1 force-gradient-gold-text hover:force-gradient-gold-text"
                           title={t('files.actions.delete')}
                         >
-                          <Trash2 className="w-5 h-5" />
+                          <Trash2 className="w-5 h-5 force-gradient-gold-text" />
                         </button>
                       </div>
                     </td>

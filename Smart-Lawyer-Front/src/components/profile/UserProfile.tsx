@@ -45,7 +45,7 @@ const UserProfile: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="bg-navy rounded-lg p-6 mb-6 shadow-sm border border-darkgray">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-xl font-bold text-gold">
+          <h1 className="text-xl font-bold gradient-gold-text">
             {language === 'ar' ? user.fullName : user.fullNameEn}
           </h1>
           <p className="text-gray-300">{user.email}</p>
@@ -55,7 +55,7 @@ const UserProfile: React.FC = () => {
       <div className="bg-navy rounded-lg p-6 shadow-sm border border-darkgray">
         <div className="flex justify-between items-center border-b border-darkgray pb-4 mb-6">
           <div className="flex-1 text-center">
-            <h2 className="text-lg font-bold text-gold inline-block">
+            <h2 className="text-lg font-bold gradient-gold-text inline-block">
               <span className="mx-2">{language === 'ar' ? 'الملف الشخصي' : 'Profile'}</span>
             </h2>
           </div>
@@ -106,7 +106,7 @@ const UserProfile: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gold"
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:gradient-gold-text"
               >
                 {showCurrentPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -129,7 +129,7 @@ const UserProfile: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowNewPassword(!showNewPassword)}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gold"
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:gradient-gold-text"
               >
                 {showNewPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -152,7 +152,7 @@ const UserProfile: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gold"
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:gradient-gold-text"
               >
                 {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -169,7 +169,7 @@ const UserProfile: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-gold text-black rounded-md hover:bg-amber-400 transition-colors"
+              className="px-4 py-2 gradient-gold text-black rounded-md transition-colors"
             >
               {language === 'ar' ? 'حفظ التغييرات' : 'Save Changes'}
             </button>

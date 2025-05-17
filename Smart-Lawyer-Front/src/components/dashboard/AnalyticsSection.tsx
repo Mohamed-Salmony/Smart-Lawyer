@@ -41,25 +41,25 @@ const AnalyticsSection: React.FC = () => {
     {
       title: t('analytics.totalUploads'),
       value: '156',
-      icon: <BarChart3 className="w-6 h-6 text-gold" />,
+      icon: <BarChart3 className="w-6 h-6 gradient-gold-text" />,
       change: '+12%',
     },
     {
       title: t('analytics.activeUsers'),
       value: '23',
-      icon: <TrendingUp className="w-6 h-6 text-gold" />,
+      icon: <TrendingUp className="w-6 h-6 gradient-gold-text" />,
       change: '+5%',
     },
     {
       title: t('analytics.approvedFiles'),
       value: '1,234',
-      icon: <FileText className="w-6 h-6 text-gold" />,
+      icon: <FileText className="w-6 h-6 gradient-gold-text" />,
       change: '+23%',
     },
     {
       title: t('analytics.pendingApprovals'),
       value: '15',
-      icon: <Users className="w-6 h-6 text-gold" />,
+      icon: <Users className="w-6 h-6 gradient-gold-text" />,
       change: '+3%',
     },
   ];
@@ -67,7 +67,7 @@ const AnalyticsSection: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <h1 className="text-2xl font-bold text-gold">{t('analytics.title')}</h1>
+        <h1 className="text-2xl font-bold gradient-gold-text">{t('analytics.title')}</h1>
       </div>
 
       {/* Stats Grid */}
@@ -77,8 +77,8 @@ const AnalyticsSection: React.FC = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-300">{stat.title}</p>
-                <p className="text-2xl font-bold text-gold">{stat.value}</p>
-                <p className="text-sm text-gold">{stat.change} {t('analytics.fromLastMonth')}</p>
+                <p className="text-2xl font-bold gradient-gold-text">{stat.value}</p>
+                <p className="text-sm gradient-gold-text">{stat.change} {t('analytics.fromLastMonth')}</p>
               </div>
               <div className="p-3 bg-darkgray rounded-full">
                 {stat.icon}
@@ -91,14 +91,14 @@ const AnalyticsSection: React.FC = () => {
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-navy p-6 rounded-lg shadow-sm border border-darkgray">
-          <h2 className="text-lg font-semibold text-gold mb-4">{t('analytics.uploadTrends')}</h2>
+          <h2 className="text-lg font-semibold gradient-gold-text mb-4">{t('analytics.uploadTrends')}</h2>
           <div className="h-64 bg-darkgray rounded-lg flex items-center justify-center">
             <p className="text-gray-300">{t('analytics.chartPlaceholder')}</p>
           </div>
         </div>
 
         <div className="bg-navy p-6 rounded-lg shadow-sm border border-darkgray">
-          <h2 className="text-lg font-semibold text-gold mb-4">{t('analytics.userStats')}</h2>
+          <h2 className="text-lg font-semibold gradient-gold-text mb-4">{t('analytics.userStats')}</h2>
           <div className="h-64 bg-darkgray rounded-lg flex items-center justify-center">
             <p className="text-gray-300">{t('analytics.chartPlaceholder')}</p>
           </div>
@@ -108,13 +108,13 @@ const AnalyticsSection: React.FC = () => {
       {/* Recent Activity */}
       <div className="bg-navy rounded-lg shadow-sm border border-darkgray">
         <div className="p-6">
-          <h2 className="text-lg font-semibold text-gold mb-4">{t('analytics.uploadStats')}</h2>
+          <h2 className="text-lg font-semibold gradient-gold-text mb-4">{t('analytics.uploadStats')}</h2>
           <div className="space-y-4">
             {analyticsData.map((item) => (
               <div key={item.id} className="flex items-center justify-between p-4 bg-darkgray rounded-lg">
                 <div className="flex items-center space-x-3">
                   <div className="p-2 bg-navy rounded-full">
-                    <FileText className="w-5 h-5 text-gold" />
+                    <FileText className="w-5 h-5 gradient-gold-text" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-300">{item.title}</p>

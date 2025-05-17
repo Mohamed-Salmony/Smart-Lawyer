@@ -38,7 +38,7 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ language }) => {
   return (
     <nav className="w-64 bg-navy min-h-screen p-4">
       <div className="mb-8">
-        <h1 className={`text-xl font-bold text-gold ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+        <h1 className={`text-xl font-bold gradient-gold-text ${language === 'ar' ? 'text-right' : 'text-left'}`}>
           {language === 'ar' ? 'لوحة التحكم' : 'Dashboard'}
         </h1>
       </div>
@@ -52,7 +52,7 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ language }) => {
                 language === 'ar' ? 'flex-row-reverse' : 'flex-row'
               }`}
             >
-              <span className="text-gold">{item.icon}</span>
+              <span className="gradient-gold-text">{item.icon}</span>
               <span className={`text-white ${language === 'ar' ? 'mr-3' : 'ml-3'}`}>
                 {language === 'ar' ? item.label.ar : item.label.en}
               </span>

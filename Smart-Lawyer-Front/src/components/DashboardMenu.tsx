@@ -55,9 +55,9 @@ const DashboardMenu: React.FC<DashboardMenuProps> = ({ onMenuSelect, activeSecti
         className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-navy shadow-md"
       >
         {isMobileMenuOpen ? (
-          <X className="w-6 h-6 text-gold" />
+          <X className="w-6 h-6 gradient-gold-text" />
         ) : (
-          <Menu className="w-6 h-6 text-gold" />
+          <Menu className="w-6 h-6 gradient-gold-text" />
         )}
       </button>
 
@@ -77,13 +77,13 @@ const DashboardMenu: React.FC<DashboardMenuProps> = ({ onMenuSelect, activeSecti
       >
         <div className="p-4">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-gold">{t('dashboard.title')}</h2>
+            <h2 className="text-xl font-bold gradient-gold-text">{t('dashboard.title')}</h2>
             <button
               onClick={toggleLanguage}
               className="p-2 rounded-lg hover:bg-darkgray transition-colors"
               title={language === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية'}
             >
-              <Languages className="w-5 h-5 text-gold" />
+              <Languages className="w-5 h-5 gradient-gold-text" />
             </button>
           </div>
           <nav>
@@ -94,8 +94,8 @@ const DashboardMenu: React.FC<DashboardMenuProps> = ({ onMenuSelect, activeSecti
                     onClick={() => handleMenuClick(item.id)}
                     className={`w-full flex items-center px-4 py-2 text-sm rounded-lg transition-colors ${
                       activeSection === item.id
-                        ? 'bg-darkgray text-gold'
-                        : 'text-gray-300 hover:bg-darkgray hover:text-gold'
+                        ? 'bg-darkgray gradient-gold-text'
+                        : 'text-gray-300 hover:bg-darkgray hover:gradient-gold-text'
                     }`}
                   >
                     {item.icon}

@@ -41,7 +41,7 @@ const DocumentRow: React.FC<DocumentRowProps> = ({ document, language }) => {
       <td>{language === 'ar' ? document.type : document.typeEn}</td>
       <td>{language === 'ar' ? document.date : document.dateEn}</td>
       <td className="space-x-2 space-x-reverse">
-        <button onClick={handleView} className="p-1 text-gold hover:text-amber-400">
+        <button onClick={handleView} className="p-1 text-yellow-700 hover:text-yellow-400">
           <Eye size={18} />
         </button>
         <button onClick={handleDownload} className="p-1 text-blue-400 hover:text-blue-300">
