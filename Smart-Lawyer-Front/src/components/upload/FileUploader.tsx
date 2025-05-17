@@ -66,7 +66,7 @@ const FileUploader = () => {
       
       <div className="max-w-2xl mx-auto bg-navy p-8 rounded-lg shadow-lg mt-8">
         <div className="file-upload mb-8">
-          <Upload className="gradient-gold-text h-10 w-10 mb-4" />
+          <Upload className="text-yellow-700 h-10 w-10 mb-4" />
           <p className="text-center">اسحب الملفات هنا أو اضغط للتحميل</p>
           <p className="text-xs text-gray-400 mt-2 text-center">(الحد الأقصى: 10 ميجابايت) PDF, DOCX</p>
           
