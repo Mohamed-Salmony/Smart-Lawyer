@@ -23,7 +23,7 @@ const LoginForm = () => {
   return (
     <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-navy rounded-lg max-w-md mx-auto">
       <div className="w-full max-w-md space-y-8">
-        <div className="text-center">
+        <div className="flex flex-col items-center">
           <Logo size="medium" />
           <h2 className="mt-6 text-xl font-cairo font-bold">مرحباً بعودتك، سجل دخولك لمتابعة</h2>
         </div>
@@ -88,7 +88,7 @@ const LoginForm = () => {
                 </label>
               </div>
               <div className="text-sm">
-                <Link to="/forgot-password" className="text-gold hover:text-amber-400">
+                <Link to="/forgot-password" className="gradient-gold-text hover:text-amber-400">
                   نسيت كلمة المرور؟
                 </Link>
               </div>
@@ -98,7 +98,7 @@ const LoginForm = () => {
           <div>
             <Button
               type="submit"
-              className="w-full bg-gold text-black hover:bg-amber-400"
+              className="w-full gradient-gold text-black hover:bg-amber-400"
             >
               تسجيل الدخول
             </Button>
@@ -133,7 +133,7 @@ const LoginForm = () => {
         <div className="text-center mt-4">
           <p className="text-sm">
             ليس لديك حساب؟{" "}
-            <Link to="/register" className="text-gold hover:text-amber-400 font-bold">
+            <Link to="/register" className="gradient-gold-text hover:text-amber-400 font-bold">
               إنشاء حساب جديد
             </Link>
           </p>

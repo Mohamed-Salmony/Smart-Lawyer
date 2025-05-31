@@ -25,7 +25,7 @@ const RegisterForm = () => {
   return (
     <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-navy rounded-lg max-w-md mx-auto">
       <div className="w-full max-w-md space-y-8">
-        <div className="text-center">
+        <div className="flex flex-col items-center">
           <Logo size="medium" />
           <h2 className="mt-6 text-xl font-cairo font-bold">مرحباً بك، يرجى إدخال بياناتك</h2>
         </div>
@@ -153,7 +153,7 @@ const RegisterForm = () => {
         <div className="text-center mt-4">
           <p className="text-sm">
             لديك حساب بالفعل؟{" "}
-            <Link to="/login" className="text-gold hover:text-amber-400 font-bold">
+            <Link to="/login" className="gradient-gold-text hover:text-amber-400 font-bold">
               تسجيل الدخول
             </Link>
           </p>
